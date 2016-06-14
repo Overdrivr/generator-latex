@@ -51,7 +51,7 @@ module.exports = function (grunt) {
     watch: {
       latex: {
         files: '**/*.tex',
-        tasks: ['latex', 'shell:glossary', 'latex:pdf']
+        tasks: ['latex', <% if (gloss) { %> 'shell:glossary',<% } %>  'latex:pdf']
       },<% if (bib) { %>
       bibtex: {
         files: '**/*.bib',
